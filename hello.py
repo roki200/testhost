@@ -1,3 +1,7 @@
-def hello(event, context):
-  print event
-  return 'Hello Kubernetes, you said: %s' % event['data']
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/hello")
+def hello():
+    return "World!"
